@@ -20,7 +20,7 @@ public class SavingsAccount extends Account {
 		}
 	}
 
-	// Método de depósito: Valida se o valor solicitado é menor ou igual ao saldo disponível
+	// Método de depósito: Valida se o valor a ser depositado é maior que 0
 	@Override
 	public void deposit(double value) {
 		if (value > 0) {
@@ -29,12 +29,6 @@ public class SavingsAccount extends Account {
 		} else {
 			System.out.println("Saldo insuficiente para saque de R$ " + value);
 		}
-	}
-	
-	// Método de acréscimo de juros
-	public double update(double balance) {
-		double newBalance = balance * 0.10;
-		return newBalance;
 	}
 	
 	// Método para imprimir o extrato

@@ -12,6 +12,8 @@ public abstract class Account implements Transactions {
 	protected double balance;
 	protected Client client;
 	
+	
+	// Number faz com que o número das contas não sejam repetidos
 	public Account(Client client) {
 		this.agency = Account.STANDARD_AGENCY;
 		this.number = SEQUENTIAL++;

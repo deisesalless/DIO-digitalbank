@@ -21,10 +21,10 @@ public class CheckingAccount extends Account {
 		
 	}
 
-	// Método de depósito: Valida se o valor solicitado é menor ou igual ao saldo disponível
+	// Método de depósito: Valida se o valor a ser depositado é maior que 0
 	@Override
 	public void deposit(double value) {
-		if (value > 0.0) {
+		if (value > 0) {
 			balance += value;
 			System.out.println("Valor R$ " + value + " depositado com sucesso em sua conta corrente.");
 		} else {
