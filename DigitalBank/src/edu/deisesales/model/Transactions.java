@@ -6,7 +6,7 @@ public interface Transactions {
 	
 	public void deposit(double value);
 	
-	public void transference(double value, CheckingAccount targetAccount);
+	public void transference(double value, Transactions targetAccount);
 	
 	public void printBankStatement();
 	

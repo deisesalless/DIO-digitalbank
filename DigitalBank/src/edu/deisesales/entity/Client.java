@@ -1,5 +1,6 @@
 package edu.deisesales.entity;
 
+
 public class Client {
 	private String name;
 
@@ -10,5 +11,7 @@ public class Client {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	
 
 }

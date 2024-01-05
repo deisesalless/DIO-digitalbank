@@ -1,17 +1,21 @@
 package edu.deisesales.entity;
 
-public abstract class Account {
+import edu.deisesales.model.Transactions;
+
+public abstract class Account implements Transactions {
 	
 	private static final int STANDARD_AGENCY = 1;
-	private static final int SEQUENTIAL = 1;
+	private static int SEQUENTIAL = 1;
 	
 	protected int agency;
 	protected int number;
 	protected double balance;
+	protected Client client;
 	
-	public Account() {
+	public Account(Client client) {
 		this.agency = Account.STANDARD_AGENCY;
-		this.number = Account.SEQUENTIAL;
+		this.number = SEQUENTIAL++;
+		this.client = client;
 	}
 
 	public int getAgency() {
@@ -37,4 +41,13 @@ public abstract class Account {
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}
+	
+	// Método de transferência entre contas
+	@Override
+	public void transference(double value, Transactions targetAccount) {
+		withdraw(value);
+		System.out.println(value);
+		targetAccount.deposit(value);
+	}
+
 }
